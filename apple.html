@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smartwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="product-detail">
+    <!-- Gambar Produk -->
+    <div class="product-images">
+        <img id="main-image" src="img/latar.png" alt="Gambar Produk Jam Tangan" style="width: 300px;">
+        <div class="thumbnail-images">
+            <img src="img/p1.png" alt="Thumbnail 1" onclick="changeImage('img/p1.png')" style="width: 100px;">
+            <img src="img/p1_2.png" alt="Thumbnail 2" onclick="changeImage('img/p1_2.png')" style="width: 100px;">
+        </div>
+    </div>
+
+    <!-- Informasi Produk -->
+    <div class="product-info">
+        <h1 id="product-name">Apple</h1>
+        <p class="price" id="product-price">Rp2.000.000</p>
+        <p class="description" id="product-description">
+            Jam tangan kronograf elegan dengan desain klasik dan fitur canggih untuk melacak waktu secara presisi. Cocok untuk segala aktivitas, baik formal maupun kasual.
+        </p>
+        
+        <!-- Spesifikasi Produk -->
+        <div class="specifications">
+            <h3>Spesifikasi</h3>
+            <ul>
+                <li>Diameter: 42mm</li>
+                <li>Material: Stainless Steel</li>
+                <li>Water Resistant: 50m</li>
+                <li>Tipe Gerakan: Quartz</li>
+                <li>Fitur: Kronograf, Tanggal</li>
+                <li>Garansi: 1 Tahun</li>
+            </ul>
+        </div>
+
+        <!-- Pilihan Jumlah dan Tombol Tambah ke Keranjang -->
+        <div class="purchase-options">
+            <label for="quantity">Jumlah:</label>
+            <input type="number" id="quantity" min="1" value="1" style="width: 50px;">
+            <button onclick="addToCart()">Tambah keranjang</button>
+           <button><a href="pemesanan.html">Checkout</a></button>
+            <button><a href="index.html">kembali</a></button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Fungsi untuk mengganti gambar utama ketika thumbnail diklik
+    function changeImage(imageSrc) {
+        document.getElementById("main-image").src = imageSrc;
+    }
+
+    // Fungsi untuk menambahkan produk ke keranjang
+    function addToCart() {
+        const quantity = document.getElementById("quantity").value;
+        alert(`Produk telah ditambahkan ke keranjang.\nJumlah: ${quantity}`);
+    }
+</script>
+
+</body>
+</html>
